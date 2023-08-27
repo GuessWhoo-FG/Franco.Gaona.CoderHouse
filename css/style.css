@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../img/171667-el_minimalismo-arte-graficos-ambiente-objeto_astronomico-3840x2160.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* header- logo - */
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.encabezado::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.logotipo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navegacion a {
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#cajita {
+    display: none;
+}
+
+.iconos {
+    position: absolute;
+    right:5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/*responsive del nav*/
+@media (max-width: 992px) {
+    .encabezado {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .iconos {
+        display: inline-flex;
+    }
+
+    #cajita:checked~.iconos #icono-menu {
+        display: none;
+    }
+
+    .iconos #icono-x {
+        display: none;
+    }
+
+    #cajita:checked~.iconos #icono-x {
+        display: block;
+    }
+
+    .navegacion {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #cajita:checked~.navegacion {
+        height: 17.7rem;
+    }
+
+    .navegacion a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+
+        transition: .3s ease;
+    }
+
+    #cajita:checked~.navegacion a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(.15s * var(--i));
+    }
+}
+/*Fin de Header Responsive*/
+/*Inicio de Main*/
+.principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.3rem 10%;
+    margin-top: 10rem;
+    margin-right: 2rem;
+}
+
+.principal .titulo-principal h1{
+    font-size: 7rem;
+    font-weight: 900;
+    color: white;
+}
+
+.principal .titulo-principal span{
+    color: #DAC0A3;
+}
+.principal .titulo-principal h3{
+    font-weight: 900;
+    color: white;
+}
+
+.card {
+    background: rgba(232, 227, 227, 0.5);
+    backdrop-filter: blur(2px);
+    margin-right: 2rem;
+    margin-left: 5rem;
+}
+
+@media (max-width: 768px) {
+    .principal {
+        display: inline-block;
+        padding: 1.5rem 3%;
+    }
+
+    .titulo-principal {
+        padding: 3rem;
+    }
+
+    .principal .titulo-principal h1{
+        color: white;
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    
+    .card {
+        margin-left: 5%;
+    }
+}
+/*Fin del body*/
+/*inicio del footer*/
+.footer-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    left: 0;
+    background-color: transparent;
+
+
+}
+.footer-index .redes-sociales-footer{
+    font-size: 5rem;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+    .footer-index {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 1%;
+    }
+}
+
+/*comienzo de pagina about*/
+.card{
+    margin-top: 9rem;
+}
+.card .card-body .card-text {
+    font-size: 2rem;
+    color: black;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
